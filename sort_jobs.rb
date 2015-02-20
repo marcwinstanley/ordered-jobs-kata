@@ -1,7 +1,9 @@
 class SortJobs
 
   def self.sort(jobs)
-    jobs.name
+    jobs.list.map do |job|
+      jobs.list.first.name
+    end
   end
 
 end

@@ -12,16 +12,20 @@ end
 
 class JobList
 
-  def initialize(job)
-    @job = job
+  def initialize
+    @list = []
+    @stringified_list = ''
   end
 
-  def self.add(job)
-    new(job).add
+  def add(job)
+    @list << job
   end
 
-  def add
-    @list||=
+  def sorted_list
+    @list.map do |job|
+      @stringified_list.concat(job.name)
+    end
+    @stringified_list
   end
 
 end
